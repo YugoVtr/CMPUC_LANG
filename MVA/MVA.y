@@ -279,8 +279,8 @@ int main(int argc, char **argv){
 }
 
 int yyerror(char *s){
-	resp = malloc(sizeof("Algo de errado não está certo!!"));
-	strcpy(resp, "Algo de errado não está certo!!");
+	resp = malloc(sizeof("Deu ruim na VM."));
+	strcpy(resp, "Deu ruim na VM.");
 	return 0;
 }
 

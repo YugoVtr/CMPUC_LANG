@@ -1,4 +1,5 @@
-%option yylineno 
+%option yylineno
+%option noyywrap
 %{
 #include <stdlib.h>
 #include <math.h>
