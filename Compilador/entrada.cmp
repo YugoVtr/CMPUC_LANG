@@ -1,0 +1,10 @@
+int t <= 1;
+se t = 5 {
+	output 4;
+} senao{
+	enquanto t < 5 {
+		output t;
+		t <= t + 1;
+	};
+};
+fim
