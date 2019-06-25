@@ -155,7 +155,7 @@ fator:
 		free(nomeLabel); 
 		nomeLabel = 0;
 		fprintf(yyout, "loadI %d r2\n", auxAtribuicao);
-		fprintf(yyout, "load r2 r3\n", auxAtribuicao);
+		fprintf(yyout, "load r2 r3\n");
 		fprintf(yyout, "loadI %d r1\n", ++sp);
 		fprintf(yyout, "store r3 r1\n");
 	}
@@ -263,7 +263,7 @@ sequenciaComandos FECHAC {
 int main(int argc, char **argv){
 	
 	yyin = fopen("entrada.cmp", "r");
-	yyout = fopen("saida.txt", "w");
+	yyout = fopen("saida.mva", "w");
 	yyparse();
 	if(resposta){
 		printf("%s\n", resposta);

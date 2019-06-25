@@ -30,19 +30,23 @@ short int executar = 1;
 "senao"		{ inicio if(executar) { return SENAO; } }
 "fim"		{ inicio if(executar) { return END; } }
 
-[a-zA-Z]([a-zA-Z]|[0-9])*	{ inicio if(executar) {
-					nomeLabel = malloc(sizeof(char)*16);
-					strcpy(nomeLabel, yytext); 
-					return LABEL;
-				} }
+[a-zA-Z]([a-zA-Z]|[0-9])* { 
+	inicio if(executar) {
+		nomeLabel = malloc(sizeof(char)*16);
+		strcpy(nomeLabel, yytext); 
+		return LABEL;
+	} 
+}
 
 "<"			{ inicio if(executar) { return MENOR; } }
 "="			{ inicio if(executar) { return IGUAL; } }
 ">"			{ inicio if(executar) { return MAIOR; } }
 
-[0-9]+		{ inicio if(executar) { 
-				yylval = atoi(yytext);	return NUM;		
-			} }
+[0-9]+ { inicio if(executar) { 
+	yylval = atoi(yytext);
+	return NUM;		
+	}
+}
 
 [ \t\n]		{/*ignora tab e espaco*/}
 "{"			{ inicio if(executar) { return ABREC; } }
@@ -53,4 +57,5 @@ short int executar = 1;
 ";"			{ inicio if(executar) { return PVIRGULA; } }
 ","			{ inicio if(executar) { return VIRGULA; } }
 .			{ inicio if(executar) { return ERRO; } }
+
 %%

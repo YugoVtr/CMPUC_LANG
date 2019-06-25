@@ -1,0 +1,72 @@
+loadI 1 r1
+loadI 1 r2
+store r2 r1
+loadI 1 r1
+load r1 r2
+loadI 0 r3
+store r2 r3
+loadI 0 r2
+load r2 r3
+loadI 1 r1
+store r3 r1
+loadI 2 r1
+loadI 5 r2
+store r2 r1
+loadI 2 r5
+load r5 r2
+loadI 1 r5
+load r5 r1
+comp r1 r2 r9
+cbr_EQ r9  IIf0 IElse0
+IIf0:
+loadI 1 r1
+loadI 4 r2
+store r2 r1
+loadI 1 r1
+load r1 r2
+output r2
+jumpI FElse0
+IElse0:
+IWhile0:
+loadI 0 r2
+load r2 r3
+loadI 1 r1
+store r3 r1
+loadI 2 r1
+loadI 5 r2
+store r2 r1
+loadI 2 r5
+load r5 r2
+loadI 1 r5
+load r5 r1
+comp r1 r2 r9
+cbr_LT r9  IWhileCod0 FWhile0
+IWhileCod0:
+loadI 0 r2
+load r2 r3
+loadI 1 r1
+store r3 r1
+loadI 1 r1
+load r1 r2
+output r2
+loadI 0 r2
+load r2 r3
+loadI 1 r1
+store r3 r1
+loadI 2 r1
+loadI 1 r2
+store r2 r1
+loadI 2 r1
+load r1 r2
+loadI 1 r1
+load r1 r3
+add r2 r3 r1
+loadI 1 r2
+store r1 r2
+loadI 1 r1
+load r1 r2
+loadI 0 r3
+store r2 r3
+jumpI IWhile0
+FWhile0:
+FElse0:
